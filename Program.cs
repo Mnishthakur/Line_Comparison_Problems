@@ -4,14 +4,22 @@ class Program
 {
     static void Main(string[] args)
     {
-        // Example usage
-        double x1 = 0;
-        double y1 = 0;
-        double x2 = 3;
-        double y2 = 4;
+        Point point1 = new Point(0, 0);
+        Point point2 = new Point(3, 4);
+        Point point3 = new Point(0, 0);
+        Point point4 = new Point(3, 4);
 
-        Line line = new Line(x1, y1, x2, y2);
-        double length = line.CalculateLength();
-        Console.WriteLine($"Length of the line: {length}");
+        LineEquals line1 = new LineEquals(point1, point2);
+        LineEquals line2 = new LineEquals(point3, point4);
+
+        if (line1.Equals(line2))
+        {
+            Console.WriteLine("The two lines are equal.");
+        }
+        else
+        {
+            Console.WriteLine("The two lines are not equal.");
+        }
     }
+
 }
